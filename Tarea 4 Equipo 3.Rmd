@@ -1,0 +1,62 @@
+---
+title: "Equipo 3"
+subtitle: "Tarea 4: Inversión"
+author: 
+  - Maria Isabel Cabrales Soria 
+  - Jesus Enrique Corona Zetina 
+  - Evelyn Hernández Melchor 
+  - Mario Alonso Lechuga Calderón
+date: ""
+output: 
+  pdf_document:
+    toc: true
+    toc_depth: 2
+tables: true
+toc-title: Contenido
+urlcolor: blue
+header-includes:
+   - \usepackage[nottoc]{tocbibind} \usepackage{graphicx} \usepackage{amsmath} \usepackage{fancyhdr} \pagestyle{fancy} \usepackage{enumitem} \usepackage[spanish]{babel}
+---
+\newpage 
+ 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(tinytex)
+library(ggplot2)
+options(knitr.duplicate.label = "allow")
+```
+
+
+# Ejercicio 1
+
+```{r child = 'Ejercicio 1.Rmd'}
+```
+\newpage
+
+# Ejercicio 2
+```{r child = 'Tarea 3 problema 2.Rmd'}
+```
+
+\newpage
+
+# Ejercicio 3
+
+```{r child = 'Tarea 3 Ejercicio 3.Rmd'}
+```
+
+
+\newpage
+
+# Ejercicio 4
+
+```{r child = 'Ejercicio 4.Rmd'}
+```
+
+# Ejercicio 5
+
+```{r child = 'Ejercicio 4.Rmd'}
+```
+
+\newpage
