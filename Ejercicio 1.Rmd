@@ -1,0 +1,61 @@
+---
+title: "Ejercicio 1"
+author: "Evelyn Hernandez Melchor"
+date: "2023-05-05"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Ejercicio 10.2
+**Considere el modelo de la Sección 10.1. Sin embargo, suponga que hay M hogares y que la utilidad del hogar j es** $V_j=U(C_1) + \beta_j^s U(C_2)$ **para todo j y s. Es decir, los hogares pueden tener preferencias heterogéneas sobre el consumo en diferentes estados.**
+**(a) ¿Cuáles son las condiciones de equilibrio?**
+
+
+## Ejercicio 10.3
+**Considere el modelo de inversión con información asimétrica en la Sección 10.2. Suponga que inicialmente el emprendedor emprende el proyecto y que $(1+r)(1-W)$ es estrictamente menor que $R^{MAX}$. Describa cómo cada uno de los siguientes afecta a D:**
+
+Partimos de la ecuación 10.9 presentada en el libro 
+
+$$D^*=2\gamma-c {\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}$$
+A partir de la misma obteniendo la derivada respecto a cada uno de los componentes presentados podemos ver el efecto que tienen sobre $D^*$
+
+
+**(a) Un pequeño aumento en W.**
+$$\frac{dD^*}{dW}=\frac{d}{dW}\left(2\gamma-c{\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}\right)$$
+$$=\frac{d}{dW}\left(2\gamma\right)-c\frac{d}{dW}\left({\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}\right)$$
+$$=0-\frac{1}{2}\left((2\gamma-c)^2-4\gamma(1+r)\right)\frac{d}{dW}\left((2-\gamma)^2-4\gamma(1+r)(1-W)\right)$$
+$$=-\frac{\left(\frac{d}{dW}(2\gamma-c)^2-4\gamma(1+r)\left(\frac{d}{dW}(-W)+\frac{d}{dW}(1)\right)\right)c}{2\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}$$
+$$=-\frac{\left(0-4\gamma(1+r)\left(\frac{d}{dW}W\right)+0\right)c}{2\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}$$
+$$=-\frac{2\gamma c(1+r)}{\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}$$
+$$\Rightarrow \frac{dD^*}{dW}<0$$
+Este resultado es consistente con la intuición, ya que entre mayor sea la riqueza que posea el emprendedor, menor será el monto que necesite del financiamiento exerno, por lo que las ganancias esperadas del inversor serán menores.
+
+**(b) Un pequeño aumento en r.**
+
+$$\frac{dD^*}{dr}=\frac{d}{dr}\left(2\gamma-c{\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}\right)$$
+$$=\frac{d}{dr}\left(2\gamma\right)-c\frac{d}{dr}\left({\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}\right)$$
+
+$$=0-c\frac{1}{2}\left((2\gamma-c)^2-4\gamma(1+r)(1-W)\right)\frac{d}{dr}\left((2\gamma-c)^2-4\gamma(1+r)(1-W)\right)$$
+
+$$=-\frac{\left(\frac{d}{dr}(2\gamma-c)^2-4\gamma(1-W)\left(\frac{d}{dr}(r)+\frac{d}{dr}(1)\right)\right)c}{2\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}$$
+
+$$=-\frac{(0-4\gamma(1-W)(1+0)c}{2\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}$$
+
+$$=\frac{2\gamma c(1-W)}{\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}$$
+$$\Rightarrow \frac{dD^*}{dr}<0$$
+Este resultado es consistente con la intución ya que al aumentar la tasa de interés, aumentan los costos en general, por lo que se hace mas costoso emprender un proyecto y por ende aumentan las ganancias esperadas del inversor, puesto que tendran que ofrecerle más para que invierta su dinero derivado de un aumento de r. 
+
+**(c) Un pequeño aumento en c.**
+$$=-\frac{2c^2-6\gamma c+\gamma((4W-4)r+4W-4)+4\gamma^2}{\sqrt{(2-\gamma)^2-4\gamma(1-W)(1+r)}}$$
+$$\Rightarrow \frac{dD^*}{dc}<0$$
+Este resultado es consistente con la intución, ya que entre mayor sean los costos de verificación menor será la ganancia esperada del inversor, es decir, entre mayores sean los costos de verificación menos atractivo es el proyecto para el inversor.
+
+
+**(d) En lugar de distribuirse uniformemente en $[0,2\gamma]$, la producción del proyecto se distribuye uniformemente en $[\gamma-b,\gamma+b]$, y hay un pequeño aumento en b.**
+
+
+
+**(e) En lugar de distribuirse uniformemente en $[0,2\gamma]$, la producción del proyecto se distribuye uniformemente en $[b, 2\gamma+b]$, y hay un pequeño aumento en b.**
