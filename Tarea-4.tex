@@ -1,0 +1,142 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{Times New Roman}
+  \setsansfont[]{Times New Roman}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\def\tablename{Tabla}
+\def\figurename{Figura}
+\usepackage{amsmath}
+\usepackage{float}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={TAREA},
+  pdfauthor={María Isabel cabrales Soria},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{TAREA}
+\author{María Isabel cabrales Soria}
+\date{2023-05-07}
+
+\begin{document}
+\maketitle
+
+\textbf{3. Estudie el financiamiento del sistema bancario en México a la
+luz del concepto de ``transformación de madurez''}
+
+\textbf{(a) Obtenga, del SIE Financiamiento e información financiera de
+intermediarios financieros del Banco de México, información de las
+formas de financiamiento del sector bancario (comercial) mexicano, y
+haga gráficas describiendo la evolución en el tiempo de las distintas
+tipos de financiamiento (depósitos a la vista, financiamiento de mercado
+y otros) y de la proporción que cada uno representa del total. Es decir,
+hay que producir dos gráfcas de series de tiempo en la que el valor
+total está constituido por varias partes intermedias.}
+
+Se obtuvo una serie de datos provenientes del apartado ``Principales
+activos y pasivos de la banca comercial (metodología 2018)'', dados por
+saldos nominales en miles de pesos. Estos datos se dividen en cinco
+categorías, las cuales se distinguen a continuación:
+
+-Captación: Para que las instituciones de crédito (bancos múltiples y
+bancos de desarrollo) cumplan su función de intermediación, requieren
+captar recursos, tanto del sector privado no bancario residente, de la
+Banca de desarrollo, de otros intermediarios financieros públicos
+(Fideicomisos de fomento), sector público no residente, entre otros. En
+este apartado se agregan las cuentas de cheques, depósitos de nómina y
+otros retirábles sólo con tarjeta de debito, cuentas de ahorro,
+depósitos a Plazo y Pagarés con Rendimiento Liquidable al Vencimiento.
+
+-Acreedores por reporto de valores: Es una operación de crédito en
+virtud de la cual el reportador, en este caso la banca de desarrollo,
+Banco de México, y otras instituciones financieras (Incluye al gobierno
+de la Ciudad de México, a los organismos descentralizados, empresas
+productivas del Estado, empresas de participación estatal y al IPAB)
+adquieren por una suma de dinero la propiedad de títulos de crédito, y
+se obliga a transferir al reportado la propiedad de otros tantos títulos
+de la misma especie, en el plazo convenido y contra reembolso del mismo
+precio, más un premio.
+
+-Financiamiento Interno: Importe que recibe la banca comercial en
+efectivo o en especie de acreedores nacionales y que son, además, motivo
+de autorización y registro por parte de la Secretaría de Hacienda y
+Crédito Público, sin importar el tipo de moneda en que se documenten.
+
+-Financiamiento Externo: Préstamos recibidos por la banca comercial de
+entidades financieras nacionales , los cuales pueden ser en efectivo o
+en forma de acreedores nacionales.
+
+-Otros pasivos más capital: Préstamos recibidos por la banca comercial
+de entidades financieras extranjeras, los cuales pueden ser en efectivo
+o en forma de acreedores extranjeros.Son obligaciones subordinadas en
+poder del sector privado residente y no residente, además de las
+reservas para previsión de riesgos crediticios, entre otras cuentas por
+pagar.
+
+A continuación se muestra la evolución de estas fuentes de
+financiamiento en cada periodo, comenzando en julio de 2009 hasta marzo
+de 2023. Se consideró además la serie del Índice Nacional de Precios al
+Productor con base julio 2019 para deflactar los valores. Al utilizar el
+INPP como un índice de deflación, se eliminan los efectos de la
+inflación en los valores nominales y se pueden comparar valores
+económicos de diferentes períodos de tiempo de manera más precisa.
+
+\includegraphics{Tarea-4_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\end{document}
