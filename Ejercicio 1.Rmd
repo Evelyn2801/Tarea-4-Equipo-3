@@ -11,7 +11,112 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Ejercicio 10.2
 **Considere el modelo de la Sección 10.1. Sin embargo, suponga que hay M hogares y que la utilidad del hogar j es** $V_j=U(C_1) + \beta_j^s U(C_2)$ **para todo j y s. Es decir, los hogares pueden tener preferencias heterogéneas sobre el consumo en diferentes estados.**
+
+
 **(a) ¿Cuáles son las condiciones de equilibrio?**
+
+Los supuestos de estos modelos son: 
+
+\begin{itemize}
+  \item Los hogares tienen $E$ unidades del unico bien
+  \item Existen $S$ estados posibles de la economia en el periodo 2
+  \item Hay $N$ proyectos de inversion de las firmas
+  \item se invierte en cada empresa $K_i$ con $i\in \{1,2,...,N\}$
+  \item En el periodo 2 estos prodecen $R_{is}K_i$ para cada estado $s$ (donde $K_{is}\geq 0$).
+  \item La probabilidad del estado $s$ tiene una probabilidad de ocurrir $\pi_s \geq 0$
+\end{itemize}
+
+
+ 
+Las condiciones que caracterizan el equilibrio Arrow-Debreu (commodities), es decir, derechos sobre la producción del período 2 en los diversos estados. 
+
+
+Entonces $q_s$ sera el precio en unidades del periodo 1 de un derecho de una unidad en el periodo 2 para cada estado $s$. 
+
+
+
+Por lo tanto, el equilibrio está dado por:
+
+\begin{itemize}
+  \item Un vector de precios $\{q_s\}$
+  \item Inversión $\{K_{i,j}\}$
+  \item Funciones de  consumo: $\{C_{1,j}\}$ y $\{C_{2,j}^s\}$
+\end {itemize}
+
+Por lo tanto, la restriccion presupuestaria de los hogareses: 
+$$C_{1,j}+\sum_{s=1}^{S} q_s C_{2,j}^s=E \hspace{1cm} \forall j$$
+Siguiendo el modelo teórico, la ecuacion de Euler será:
+
+$$ U'(C_{1,j})=\frac{1}{q_s}\pi_s*\beta_j^s *U'(C_{2,j}^s) \hspace{1cm} \forall s,j $$
+
+$$ q_s=\pi_s*\beta_j^s \frac{U'(C_{2,j}^s)}{U'(C_{1,j})} \hspace{1cm} \forall s,j $$
+Dado que las ecuaciones son iguales $q_s$ para toda j, igualando $q_s$ para $i$ y $j$ distintas se debe cumplir:
+
+$$\beta_j^s \frac{U'(C_{2,j}^s)}{U'(C_{1,j})} = \beta_i^s \frac{U'(C_{2,i}^s)}{U'(C_{1,i})} \hspace{1cm} j\neq i \hspace{.5cm}\forall s,j,i$$
+Además, el modelo cumple:
+\begin{itemize}
+  \item No hay beneficios sin explotar
+  \item El $Cmg_i=1$ del período 1
+  \item Los ingresos son  $\sum_{s=1}^S q_s R_{i,s}$
+  \item La ganancia de invertir es igual al costo
+  \item Si no se invierte en el proyecto, el pago de 1 unidad será igual al costo
+\end{itemize}
+
+Por lo tanto 
+
+$$
+\sum_{s=1}^S q_s R_{i,s}=\left\lbrace\begin{array}{c} 
+=1 \hspace{1.5cm} si \hspace{0.2cm}R_{i,s} >0
+\\
+\geq 1 \hspace{1cm} si \hspace{0.2cm} R_{i,s}=0\hspace{0.2cm} \forall i
+\end{array}\right.
+$$
+Por la condición de vaciado de mercado podemos derivar la condición de equilibrio del mercado en el período 1 es:
+$$
+C_{1,j}+\sum_{i=1}^N K_{i,j}=E \hspace{1cm} \forall j \in \{ 1, 2, ... , M \}
+$$
+
+Y la condición de equilibrio del mercado de consumo sobre la producción del período 2 en el estado $s$ es:
+$$
+\sum_{i=1}^N K_{i,j} R_{i,s} =C_{2,j}^s \hspace{1cm} \forall j,s
+$$
+Por lo tanto, las condiciones de equilibrio son: 
+
+\begin{itemize}
+  \item Hay $S*M$ ecuaciones para los precios $q_s$
+  \item Hay $M$ de las restricciones presupuestarias al tiempo 1
+  \item Hay $N$ de los costos marginales de invertir en cada proyecto
+  \item Hay $M$ de la condición de vaciado de mercado al tiempo 2
+  \item Hay $M*S$ condiciones de vaciado de mercado al tiempo 2
+\end{itemize}
+  
+  
+Esto da como resultado $N+2*M+2*M*S$ condiciones de equilibrio, y habiendo $S+N*M+M+S*M$ incógnitas.
+
+
+**(b) Si los $\beta´s$ difieren entre los hogares, ¿puede ser un equilibrio una situación en la que cada agente posee una fracción igual de los derechos sobre la producción de cada proyecto de inversión, de modo que $C^s_{2j}$ para un s dado sea el mismo para todos los j? ¿Por qué o por qué no?**
+
+Primero tenemos que derivado de igular la ecuacion para $q_s$ para distintos hogares, obtuvimos que:
+$$\beta_j^s \frac{U'(C_{2,j}^s)}{U'(C_{1,j})} = \beta_i^s \frac{U'(C_{2,i}^s)}{U'(C_{1,i})} \hspace{1cm} j\neq i 
+\hspace{.5cm}\forall s,j,i $$
+Por lo que si $C_{2,j}^s=C_{2,i}^s=C_{2}^s $ (es decir no depende de $j$) esto implica que 
+
+$$
+\frac{\beta_j^s}{U'(C_{1,j})}= \frac{\beta_i^s}{U'(C_{1,i})}
+$$
+
+Luego de la restriccion presupuestaria al tiempo 1:
+
+$$
+C_{1,j} =E -\sum_{s=1}^{S} q_s C_{2}^s \hspace{1cm} \forall j
+$$
+Es decir que el consumo de los hogares al tiempo 1 $C_{1,j}$ sera igual para todos los hogares, de ahi tendremos entonces que:
+
+$$
+\beta_j^s= \beta_i^s \hspace{1cm} j\neq i 
+\hspace{.5cm}\forall j,i 
+$$
+Lo cual contradice que los $\beta$'s sean diferentes en cada hogar para cada estado. Y por lo tanto los $C_{2,j}^s$'s no pueden ser iguales para todos lo hogares si estos son heterogeneos. 
 
 
 ## Ejercicio 10.3
@@ -45,17 +150,79 @@ $$=-\frac{\left(\frac{d}{dr}(2\gamma-c)^2-4\gamma(1-W)\left(\frac{d}{dr}(r)+\fra
 $$=-\frac{(0-4\gamma(1-W)(1+0)c}{2\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}$$
 
 $$=\frac{2\gamma c(1-W)}{\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}$$
-$$\Rightarrow \frac{dD^*}{dr}<0$$
+$$\Rightarrow \frac{dD^*}{dr}>0$$
 Este resultado es consistente con la intución ya que al aumentar la tasa de interés, aumentan los costos en general, por lo que se hace mas costoso emprender un proyecto y por ende aumentan las ganancias esperadas del inversor, puesto que tendran que ofrecerle más para que invierta su dinero derivado de un aumento de r. 
 
 **(c) Un pequeño aumento en c.**
+$$\frac{dD^*}{dc}=\frac{d}{dc}\left(2\gamma-c{\sqrt{(2\gamma-c)^2-4\gamma(1+r)(1-W)}}\right)$$
 $$=-\frac{2c^2-6\gamma c+\gamma((4W-4)r+4W-4)+4\gamma^2}{\sqrt{(2-\gamma)^2-4\gamma(1-W)(1+r)}}$$
+
 $$\Rightarrow \frac{dD^*}{dc}<0$$
 Este resultado es consistente con la intución, ya que entre mayor sean los costos de verificación menor será la ganancia esperada del inversor, es decir, entre mayores sean los costos de verificación menos atractivo es el proyecto para el inversor.
 
 
 **(d) En lugar de distribuirse uniformemente en $[0,2\gamma]$, la producción del proyecto se distribuye uniformemente en $[\gamma-b,\gamma+b]$, y hay un pequeño aumento en b.**
 
+Si la producción se distribuye $Y$~$U[\gamma-b,\gamma+b]$ por lo tanto:
+Esperanza de Y:
 
+$$E[Y]=\frac{\gamma-b+\gamma+b}{2}$$
+
+$$=\frac{2\gamma}{2}$$
+$$E[Y]=\gamma$$
+Para calcular el pago óptimo esperado a los inversionisas seguimos la ecuación:
+$$E(P^*)=E(Y>D)P(Y>D)+E(Y-c|Y\leq D)P(Y\leq D)$$
+Calculamos las probabilidades
+$$P(Y>D)=\frac{\gamma+b-D}{\gamma+b-(\gamma-b)}$$
+$$=\frac{\gamma+b-D}{b+b}$$
+$$=\frac{\gamma+b-D}{2b}$$
+$$P(Y\leq D)=\frac{D-(\gamma-b)}{\gamma+b-(\gamma-b)}$$
+$$=\frac{D-\gamma+b}{\gamma+b-\gamma+b}$$
+$$=\frac{D-\gamma+b}{2b}$$
+Calculamos las esperanzas
+$$E(D|Y>D)=D$$
+
+
+$$E(Y-c|Y\leq D)=\frac{D-(\gamma-b)}{2}-c$$
+$$=\frac{D-\gamma+b}{2}-c$$
+Sustituyendo las probabilidades para calcular $E(P^*)$
+$$E(P^*)=D(\frac{\gamma+b-D}{2b})+(\frac{D-\gamma+b}{2}-c)(\frac{D-(\gamma-b)}{\gamma+b-(\gamma-b)})$$
+$$=D(\frac{\gamma+b-D}{2b})+(\frac{D-\gamma+b}{2}-c)(\frac{D-\gamma+b}{2b})$$
+
+Ahora el ingreso esperado de lo que recibe el inversionista menos el costo de inversión es
+
+
+\begin{equation}
+R(D)=\left\{
+\begin{array}{ll}
+\left(\frac{\gamma+b-D}{2b}\right)D +\left(\frac{b-\gamma+D}{2b}\right)\left(\frac{D-\gamma+b}{2}-c\right) &\;\; si \;\; D\leq \gamma +b  \\
+\gamma -c &\;\; si \;\; D\geq \gamma +b
+\end{array}\right.
+\end{equation}
+
+
+Igualamos $R(D)=(1+r)(1-W)$ y resolvemos:
+$$R(D)=-\frac{D^2}{4b}+2D\frac{b-c}{4b}+\frac{2(\gamma^2-2b\gamma+b^2+2c\gamma-2cb)+4b}{8b}=(1-W)(1+r)$$
+$$=D^2-2D(b-c)-[\gamma^2-2b\gamma+b^2+2c\gamma-2cb+2b+4b(1-W)(1+r)]$$
+$$D^*=2(b-c)-\sqrt{2(b-c)+2(\gamma^2-2b\gamma+b^2+2c\gamma-2cb+2b+4b(1-W)(1+r))}$$
+Para ver el cambio respecto a b 
+
+$$\frac{dD^*}{db}=2-\frac{2(2b+4(1-W)(1+r)-2c-2a+2)+2}{2\sqrt{2(b^2)+4(1-W)(1+r)b-2cb-2ab+2b+2ac+\gamma^2)+2(b-c)}}$$
+$$\Rightarrow \frac{dD^*}{db}>0$$
+Si la producción se distribuye uniformemente en el intervalo $[\gamma-b,\gamma+b]$. El pequeño aumento en $b$ implica que la distribución de la producción se ha desplazado ligeramente hacia la derecha en comparación con la distribución uniforme anterior, lo que afectará la forma en que se calculan las probabilidades y los ingresos esperados del inversionista.
 
 **(e) En lugar de distribuirse uniformemente en $[0,2\gamma]$, la producción del proyecto se distribuye uniformemente en $[b, 2\gamma+b]$, y hay un pequeño aumento en b.**
+
+Siguiendo el mismo procedimiento que en el inciso ii) sabemos que el ingreso esperado de lo que recibe el inversionista menos el costo de inversión es:
+
+\begin{equation}
+R(D)=\left\{
+\begin{array}{ll}
+\left(\frac{2\gamma+b-D}{2\gamma}\right)D +\left(\frac{D-c}{2\gamma}\right)\left(\frac{D-b}{2}-c\right) &\;\; si \;\; D\leq 2\gamma +b  \\
+\gamma -c &\;\; si \;\; D\geq 2\gamma +b
+\end{array}\right.
+\end{equation}
+
+Siguiendo el mismo procedimiento que en el inciso d) sabemos que 
+$$\Rightarrow \frac{dD^*}{db}>0$$
+El aumento en $b$ en el rango de distribución de la producción implica un desplazamiento de toda la distribución hacia la derecha. Esto significa que las probabilidades de obtener diferentes resultados y los ingresos esperados del inversionista se verán afectados por este cambio.
