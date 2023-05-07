@@ -9,7 +9,7 @@ description: Este es un ejemplo mínimo de métodos numéricos usando R, knitr y
 ---
 
 
-# Problema 2
+
 
 Estudie la historia del IPAB (antes Fobaproa) y describa en un parrafo qué es, por qué existe, con que se compara en EEUU.
 

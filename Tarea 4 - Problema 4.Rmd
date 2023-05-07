@@ -11,7 +11,8 @@ output:
 library(readxl)
 library(mFilter)
 library(knitr)
-Base <- read_excel("C:/Users/PROBOOK/Desktop/COLMEX/Segundo Semestre/Macroeconomía/Tarea 4/Base.xlsx", col_types = c("date", "numeric", "numeric", "numeric", "numeric", "numeric", 
+
+Base <- read_excel("~/GitHub/Tarea-4-Equipo-3/Base.xlsx", col_types = c("date", "numeric", "numeric", "numeric", "numeric", "numeric", 
                                         "numeric", "numeric", "numeric","numeric", "numeric", "numeric", 
                                        "numeric", "numeric", "numeric","numeric", "numeric", "numeric", 
                                        "numeric", "numeric", "numeric","numeric", "numeric"))

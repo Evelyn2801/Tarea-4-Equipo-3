@@ -1,0 +1,20 @@
+---
+title: "Ejercicio 5"
+author: "Evelyn Hernandez Melchor"
+date: "2023-05-07"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Bienes contingentes:** s es un título para recibir una unidad del bien físico si y solo si ocurre s, es decir, los bienes contingentes se introducen para poder describir cómo las características de los agentes económicos dependen del estado del mundo (descripción completa de un posible resultado de incertidumbre).
+
+
+**Equilibrio Arrow Debreu:** Equilibrio Arrow Debreu: Bajo el supuesto de que exise un mercado para cada bien contingente podemos aplicar el concepto de equilibrio Walrasiano, al cual se le conoce como equilibrio Arrow-Debreu. Siguiendo su definición formal, una asignación de una cesta de x y y en equilibrio y un vector de precios también de equilirbio, constituye un equilibrio Arrow-Debreu si: se maximizan beneficios, se maximizan utilidades y se vacía el mercado.
+
+
+**Estructura completa:** Una estructura completa se da cuando el número de activos linealmente independientes en una economía es igual al número de estados de la naturaleza.
+
+**Verificación costosa del Estado:** La verificación costosa del estado surge debido a que los emprendedores están mejor informados que los inversores externos sobre la producción real de sus proyectos, por lo que se utiliza para asegurarse de que un proyecto o proceso esté funcionando según lo previsto, cumpla con los estándares establecidos o cumpla con los requisitos específicos. 

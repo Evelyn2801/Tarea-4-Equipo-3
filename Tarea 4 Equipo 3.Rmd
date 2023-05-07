@@ -36,27 +36,23 @@ options(knitr.duplicate.label = "allow")
 \newpage
 
 # Ejercicio 2
-```{r child = 'Tarea 3 problema 2.Rmd'}
+```{r child = 'Tarea 4 Ejercicio 2.Rmd'}
 ```
 
 \newpage
 
-# Ejercicio 3
 
-```{r child = 'Tarea 3 Ejercicio 3.Rmd'}
-```
-
-
-\newpage
 
 # Ejercicio 4
 
 ```{r child = 'Tarea 4 - Problema 4.Rmd'}
 ```
 
+\newpage
+
 # Ejercicio 5
 
-```{r child = 'Ejercicio 4.Rmd'}
+```{r child = 'Ejercicio 5.Rmd'}
 ```
 
 \newpage
