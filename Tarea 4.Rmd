@@ -2,21 +2,7 @@
 title: "TAREA"
 author: "María Isabel cabrales Soria"
 date: "`r Sys.Date()`"
-output:
-  pdf_document:
-    latex_engine: xelatex
-    extra_dependencies: float
-  html_document:
-    df_print: paged
-mainfont: Times New Roman
-sansfont: Times New Roman
-fontsize: 12pt
-link-citations: yes
-geometry: margin=1in
-header-includes:
-- \def\tablename{Tabla}
-- \def\figurename{Figura}
-- \usepackage{amsmath}
+output: pdf_document
 ---
 
 
@@ -69,8 +55,8 @@ comenzando en julio de 2009 hasta marzo de 2023. Se consideró además la serie 
 
 
 ```{r}
-Pasivos <- readxl::read_xlsx("Pasivos.xlsx")
-INPP<- readxl::read_xls("INPP.xls")
+Pasivos <- readxl::read_xlsx("~/GitHub/Tarea-4-Equipo-3/Pasivos.xlsx")
+INPP<- readxl::read_xls("~/GitHub/Tarea-4-Equipo-3/INPP.xls")
 datos_combinados <- merge(Pasivos, INPP, by = "Periodos")
 
 ```
@@ -118,3 +104,235 @@ ggplot(datos_deflactados_seleccionados, aes(x = Periodos)) +
 
 ```
 
+Al analizar la serie deflactada de la evolución de los pasivos que adquiere la Banca Comercial, se puede notar que el rubro "captación" representa el mayor saldo en miles de pesos en comparación con las demás cuentas de pasivos. Esto indica que la banca comercial ha dependido en gran medida de la captación de recursos de diversos sectores como el público, organismos, empresas, gobierno e instituciones, para financiar sus actividades y operaciones.
+
+Asimismo, se observa una clara tendencia al alza en la captación de recursos a lo largo del periodo de análisis. Esta tendencia sugiere que la banca comercial ha estado cada vez más involucrada en la captación de recursos del público y de otros sectores para financiar su crecimiento y expansión. Lo cual no sucede con las otras formas de financiamiento, pues se mantienen relativamente con una tendencia constante a lo largo de la serie.
+
+Al utilizar la deflación, se puede determinar si esta tendencia al alza es significativa en términos reales. Es decir, si los aumentos en los saldos de captación se deben a un aumento real en la cantidad de recursos captados o simplemente son el resultado del aumento en los precios de los bienes y servicios en el periodo analizado.
+
+Cabe destacar, también, que existe relativamente poco financiamiento externo e interno sobre los pasivos totales de la banca comercial, pues son los que tienen menor participación.
+
+Enseguida, se muestra la gráfica que muestra la proporción que cada tipo de financiamiento representa del total:
+
+
+```{r}
+Prop <- readxl::read_xlsx("~/GitHub/Tarea-4-Equipo-3/Prop.xlsx")
+```
+
+
+```{r message=TRUE, warning=TRUE}
+# Convertir la columna "Periodos" en formato de fecha
+Prop$Periodos <- as.Date(paste0(Prop$Periodos, "/01"), format="%Y/%m/%d")
+
+# Crear gráfico de áreas con colores diferentes para cada serie
+plot(Prop$Periodos, Prop$Prop_Captacion, type="n", xlab="Periodos", ylab="Proporciones" , ylim=c(0, 100))
+polygon(c(Prop$Periodos, rev(Prop$Periodos)), c(Prop$Prop_Captacion, rep(0, nrow(Prop))), col="blue")
+polygon(c(Prop$Periodos, rev(Prop$Periodos)), c(Prop$Prop_Captacion + Prop$Prop_Acreedores, rev(Prop$Prop_Captacion)), col="red")
+polygon(c(Prop$Periodos, rev(Prop$Periodos)), c(Prop$Prop_Captacion + Prop$Prop_Acreedores + Prop$Prop_Interno, rev(Prop$Prop_Captacion + Prop$Prop_Acreedores)), col="green")
+polygon(c(Prop$Periodos, rev(Prop$Periodos)), c(Prop$Prop_Captacion + Prop$Prop_Acreedores + Prop$Prop_Interno + Prop$Prop_Externo, rev(Prop$Prop_Captacion + Prop$Prop_Acreedores + Prop$Prop_Interno)), col="orange")
+polygon(c(Prop$Periodos, rev(Prop$Periodos)), c(Prop$Prop_Captacion + Prop$Prop_Acreedores + Prop$Prop_Interno + Prop$Prop_Externo + Prop$Prop_Otros, rev(Prop$Prop_Captacion + Prop$Prop_Acreedores + Prop$Prop_Interno + Prop$Prop_Externo)), col="purple")
+
+# Agregar etiquetas de eje y título y límites de eje y
+axis(2, at=seq(0, 120, by=20))
+title(main="Proporción por tipo de financiamiento ", xlab="Periodos", ylab="Proporciones")
+legend("topright", c("Prop_Captacion", "Prop_Acreedores", "Prop_Interno", "Prop_Externo", "Prop_Otros"), fill=c("blue", "red", "green", "orange", "purple"))
+
+```
+
+-Podemos notar que la región azul, que representa la proporción financiada por captación, ha destacado desde el inicio de la serie hasta el final, siendo cada vez más relevante, pasando de $52\%$ en julio de 2009, a $71\%$ en marzo de 2023.
+
+-Por otro lado, la proporción de acreedores se redujo prácticamente a la mitad, pasando de $31\%$ en julio de 2009, a $15\%$ en marzo de 2023.
+
+-La proporción de financiamiento externo no ha cambiado de manera radical, puesto que siempre se ha mantenido en niveles muy bajos, nunca sobrepasando el $3\%$.
+
+Como vimos, la captación ha sido el mayor tipo de financiamiento para la banca comercial. Al indagar un poco más, nos dimos cuenta de que la captación se compone de varios rubros, como ya se mencionó, está dividido en cuentas de cheques, depósitos de nómina y otros retirábles sólo con tarjeta de debito, cuentas de ahorro, depósitos a plazo y pagarés con rendimiento liquidable al vencimiento. 
+En la siguiente gráfica se muestran los tres más relevantes desde julio de 2009:
+
+```{r}
+# Cargar los datos en un dataframe
+datos <- readxl::read_xlsx("~/GitHub/Tarea-4-Equipo-3/Tipo_capta.xlsx")
+
+# Deflactar los pasivos utilizando la columna INPP existente
+datos$Cheques_deflactado <- datos$Cheques / datos$INPP
+datos$vista_deflactado <- datos$Vista / datos$INPP
+datos$Plazo_deflactado <- datos$Plazo / datos$INPP
+```
+
+
+
+
+```{r}
+# Generar un gráfico de líneas con los valores de Cheques_deflactado, vista_deflactado y Plazo_deflactado en función del Año
+ggplot(datos, aes(x = Año)) +
+  geom_line(aes(y = Cheques_deflactado, color = "Cuenta de cheques")) +
+  geom_line(aes(y = vista_deflactado, color = "Depósitos de nómina")) +
+  geom_line(aes(y = Plazo_deflactado, color = "Depósitos a plazo")) +
+  labs(title = "Dsitribución por principales instrumentos",
+       x = "Año",
+       y = "Saldos nominales en miles de pesos",
+       color = "Tipo de instrumento") +
+  scale_color_manual(values = c("Cuenta de cheques" = "red",
+                                "Depósitos de nómina"= "green",
+                                "Depósitos a plazo" = "blue"))
+```
+
+Comenzamos en 2009 con una mayor participación de depósitos a plazo. No obstante, a partir del 2011, su relevancia se estancó, tomando la delantera en el financiamiento por captación de la banca comercial, las cuentas de cheques, con una tendencia notablemente al alza.
+
+
+**(b) Obtenga de la misma fuente información del tipo de créditos que el sistema bancario (comercial) mexicano otorga, y haga gráficas describiendo la evolución en el tiempo de distintos tipos de crédito y de la proporción que cada uno representa del total. Al igual que en el inciso anterior, hay que producir dos gráficas de series de tiempo en la que el valor total está constituido por varias partes intermedias.**
+
+La fuente de información utilizada para obtener los datos sobre los diferentes tipos de crédito otorgados por el sector bancario fue la base de datos del Sistema de Información Económica (SIE), específicamente la sección denominada "Banca Comercial, Cartera de crédito vigente total al sector privado no bancario". Para este análisis, se consideró el rubro de la Cartera vigente total, que incluye la cartera directa vigente, la cual se subdivide en Consumo, Vivienda, Empresas y personas físicas con actividad empresarial e Intermediarios financieros no bancarios privados, además, se incluye la cartera vigente asociada a programas de reestructura.
+
+La Figura 3 muestra la evolución del financiamiento otorgado por la banca comercial en el periodo comprendido entre enero de 2003 y marzo de 2023, lo que permite observar el comportamiento de los diferentes tipos de crédito a lo largo del tiempo. Es importante destacar que esta información es valiosa para comprender el papel que desempeña la banca comercial en la economía y cómo ha evolucionado su oferta de crédito a lo largo del tiempo en respuesta a las necesidades del sector privado no bancario. 
+
+Cabe mencionar que, como en el inciso anterior se utilizó en INPP como herremienta.
+
+
+```{r}
+Otorga <- readxl::read_xlsx("~/GitHub/Tarea-4-Equipo-3/Otorga.xlsx")
+datos_combinados <- merge(Otorga, INPP, by = "Periodos")
+
+```
+
+```{r}
+Otorga_deflactados <- datos_combinados %>%
+  mutate(Consumo_def = Consumo / Inpp * 100,
+         Vivienda_def = Vivienda / Inpp * 100,
+         Empresas_def = Empresas / Inpp * 100,
+         Intermediarios_financieros_no_bancarios_Def = Intermediarios_financieros_no_bancarios / Inpp * 100, 
+         Programas_de_reestructura_Def = Programas_de_reestructura / Inpp * 100)
+```
+
+
+```{r}
+# Selecciona solo las columnas deflactadas que deseas guardar
+Otorga_deflactados_seleccionados <- Otorga_deflactados %>%
+  select(Periodos, Consumo_def, Vivienda_def, Empresas_def , Intermediarios_financieros_no_bancarios_Def, Programas_de_reestructura_Def)
+
+```
+
+
+```{r}
+# Guarda los datos en un archivo de Excel
+write.csv(Otorga_deflactados_seleccionados, "otorga_deflactados.csv")
+```
+
+
+```{r}
+ggplot(Otorga_deflactados_seleccionados, aes(x = Periodos)) +
+  geom_line(aes(y = Consumo_def, color = "Consumo", group = "Consumo"), size = 1.2) +
+  geom_line(aes(y = Vivienda_def, color = "Vivienda", group = "Vivienda"), size = 1.2) +
+  geom_line(aes(y = Empresas_def, color = "Empresas y personas físicas", group = "Empresas y personas físicas"), size = 1.2) +
+  geom_line(aes(y = Intermediarios_financieros_no_bancarios_Def, color = "Intermediarios financieros no bancarios", group = "Intermediarios financieros no bancarios"), size = 1.2) +
+  geom_line(aes(y = Programas_de_reestructura_Def, color = "Programas de reestructura", group = "Programas de reestructura"), size = 1.2) +
+  xlab("Periodo") +
+  ylab("Millones de Pesos") +
+  ggtitle("Evolución de los distintos tipos de crédito") +
+  scale_color_manual(values = c("Consumo" = "blue", "Vivienda" = "red", "Empresas y personas físicas" = "green", "Intermediarios financieros no bancarios" = "purple", "Programas de reestructura" = "orange")) +
+  scale_x_discrete(breaks = c("2010/01", "2013/01", "2016/01", "2019/01", "2022/01"))
+
+
+```
+
+La distribución del crédito otorgado por la banca comercial nos permite identificar el sector empresarial como el principal receptor de financiamiento. En otras palabras, la cartera de crédito vigente destinada a empresas y personas físicas con actividad empresarial se destaca por presentar los mayores saldos (nominales en millones de pesos) en comparación con los demás tipos de crédito. Este hecho sugiere que la banca comercial ha orientado su estrategia a apoyar al sector empresarial, tal vez debido a su alta rentabilidad y al importante papel que desempeña en el crecimiento económico del país.
+
+El crédito al consumo ocupa el segundo lugar en términos de financiamiento, lo que indica que la banca comercial también ha destinado una cantidad significativa de recursos para satisfacer las necesidades financieras de los hogares y los individuos. Además, el crédito a la vivienda, que se ubica en tercer lugar, ha cobrado mayor importancia en los últimos años debido a la creciente demanda de vivienda en el mercado.
+
+Por otro lado, el crédito destinado a intermediarios financieros no bancarios privados se encuentra en la penúltima posición en cuanto a financiamiento otorgado. Esto puede deberse a que estas instituciones financieras tienen otras opciones de financiamiento disponibles en el mercado y, por lo tanto, no necesitan depender tanto de los préstamos de la banca comercial.
+
+Por último, la cartera vigente asociada a programas de reestructura, ocupa el último lugar. Se refiere a aquellos préstamos o créditos que han sido reestructurados o refinanciados para facilitar el pago por parte del deudor. Esto se logra a través de acuerdos con los bancos o instituciones financieras, en los que se establecen nuevas condiciones para el pago de la deuda, tales como plazos más largos, tasas de interés más bajas o incluso la condonación de parte del capital adeudado. Estos programas de reestructura suelen ser una herramienta para evitar que los deudores caigan en incumplimiento y para que las instituciones financieras reduzcan sus riesgos crediticios. Sin embargo, también pueden ser una señal de problemas financieros en el sector, ya que indican que hay un número significativo de deudores que no pueden cumplir con sus obligaciones de pago bajo las condiciones originales del préstamo.
+
+Como en el inciso anterior, también se incluye el gráfico que muestra la proporción que cada tipo de crédito otorgado representa del total:
+
+
+
+
+
+
+
+
+
+```{r}
+Prop_Otorga <- readxl::read_xlsx("~/GitHub/Tarea-4-Equipo-3/Prop_Otorga.xlsx")
+```
+
+
+```{r message=TRUE, warning=TRUE}
+# Convertir la columna "Periodos" en formato de fecha
+Prop_Otorga$Periodos <- as.Date(paste0(Prop_Otorga$Periodos, "/01"), format="%Y/%m/%d")
+
+# Crear gráfico de áreas con colores diferentes para cada serie
+plot(Prop_Otorga$Periodos, Prop_Otorga$Consumo, type="n", xlab="Periodos", ylab="Proporciones", ylim=c(0, 100))
+polygon(c(Prop_Otorga$Periodos, rev(Prop_Otorga$Periodos)), c(Prop_Otorga$Consumo, rep(0, nrow(Prop))), col="blue")
+polygon(c(Prop_Otorga$Periodos, rev(Prop_Otorga$Periodos)), c(Prop_Otorga$Consumo + Prop_Otorga$Vivienda, rev(Prop_Otorga$Consumo)), col="red")
+polygon(c(Prop_Otorga$Periodos, rev(Prop_Otorga$Periodos)), c(Prop_Otorga$Consumo + Prop_Otorga$Vivienda + Prop_Otorga$Empresas, rev(Prop_Otorga$Consumo + Prop_Otorga$Vivienda)), col="green")
+polygon(c(Prop_Otorga$Periodos, rev(Prop_Otorga$Periodos)), c(Prop_Otorga$Consumo + Prop_Otorga$Vivienda + Prop_Otorga$Empresas + Prop_Otorga$Intermediarios_financieros_no_bancarios, rev(Prop_Otorga$Consumo + Prop_Otorga$Vivienda + Prop_Otorga$Empresas)), col="orange")
+polygon(c(Prop_Otorga$Periodos, rev(Prop_Otorga$Periodos)), c(Prop_Otorga$Consumo + Prop_Otorga$Vivienda + Prop_Otorga$Empresas + Prop_Otorga$Intermediarios_financieros_no_bancarios + Prop_Otorga$Programas_de_reestructura , rev(Prop_Otorga$Consumo + Prop_Otorga$Vivienda + Prop_Otorga$Empresas + Prop_Otorga$Intermediarios_financieros_no_bancarios)), col="purple")
+
+# Agregar etiquetas de eje y título y límites de eje y
+axis(2, at=seq(0, 120, by=20))
+title(main="Proporción que cada tipo de crédito representa del total", xlab="Periodos", ylab="Proporciones")
+legend("topright", c("Consumo", "Vivienda", "Empresas y personas Físicas", "Intermediarios financieros no bancarios", "Programas de reestructura"), fill=c("blue", "red", "green", "orange", "purple"))
+
+```
+- Podemos apreciar que el rubro de créditos a empresas y personas físicas siempre ha mantenido la mayor proporción, pues a lo largo del tiempo se ha mantenido alrededor del $53\%$ al $57\%$
+
+-Tenemos que en el rubro "Consumo" las proporciones se han mantenido entre 20 y 26 puntos porcentuales. Parecido a la franja de crédito a la vivienda, que se ha mantenido entre $18\%$ y $22\%$
+
+**(c) Explique si los datos son consistentes con la hipótesis de que los bancos hacen transformación de madurez o si no lo son y porqué. Para ello posiblemente tenga que hacer supuestos (razonables) o buscar información adicional acerca de la madurez de los distintos tipos de financiamiento y crédito otorgado.**
+
+La hipótesis de la transformación de madurez sugiere que los bancos obtienen fondos a corto plazo y los utilizan para otorgar créditos a largo plazo, obteniendo así un margen de ganancia entre las tasas de interés de ambos tipos de financiamiento. Para determinar si los datos en México son consistentes con esta hipótesis, es necesario examinar la madurez de los distintos tipos de financiamiento y crédito otorgado por los bancos.
+
+Según se observa en las gráficas proporcionadas, a partir de mediados de la primera década del siglo actual, la banca comercial en México ha venido utilizando ciertos instrumentos de financiación, a saber: cuentas de cheques, depósitos a la vista, depósitos a plazo, entre otros. Las cuentas de cheques y los depósitos a la vista son instrumentos financieros de cuenta corriente que permiten a los depositantes retirar o transferir sus fondos en cualquier momento, sin previo aviso a la entidad depositaria, ya sea mediante un cheque o una transferencia electrónica, entre otros medios. Estos dos instrumentos representan más del $50\%$ de la financiación total de la banca comercial, lo que sugiere que esta ha estado obteniendo la mayoría de su financiación a partir de fuentes con alta liquidez y de corta madurez.
+
+Por su parte, los depósitos a plazo consisten en la entrega de una cantidad de dinero a la entidad bancaria durante un tiempo determinado, durante el cual no se puede disponer de los fondos depositados hasta la fecha de vencimiento, salvo que se pague una penalización o comisión por cancelación anticipada. Aunque este instrumento es menos líquido que las cuentas de cheques y los depósitos a la vista, sus distintos plazos le permiten tener distintos niveles de liquidez.
+
+
+En cuanto a la distribución de la financiación otorgada por la banca comercial, se observa que más del $75\%$ de los préstamos van dirigidos al sector privado no financiero, conformado por empresas privadas no financieras que se dedican a actividades productivas, así como a los hogares, tanto para créditos hipotecarios como para créditos al consumo. Estos préstamos representan inversiones no líquidas de larga madurez.
+
+En conclusión, los datos presentados son consistentes con la hipótesis de que la banca comercial en México realiza una transformación de madurez, al transformar ahorros líquidos de corta madurez en inversiones no líquidas de madurez muy larga.
+
+**(d) Explique qué implica la evolución de las formas de financiamiento y los tipos de crédito otorgados que observó en los incisos anteriores para la estabilidad del sistema financiero a la luz del modelo Diamond-Dybvig.**
+
+La evolución de las formas de financiamiento y los tipos de crédito otorgados que se observan en los incisos anteriores tienen implicaciones importantes para la estabilidad del sistema financiero, a la luz del modelo Diamond-Dybvig.
+
+Según este modelo, los bancos realizan una función esencial de intermediación financiera, al transformar depósitos a corto plazo en préstamos a largo plazo. Esto implica que los bancos son vulnerables a la posibilidad de que los depositantes quieran retirar su dinero de forma masiva, lo que puede generar una crisis de liquidez que afecte la solvencia del banco y, en última instancia, la estabilidad del sistema financiero.
+
+En este contexto, la evolución observada en los incisos anteriores sugiere que los bancos están transformando depósitos a corto plazo en préstamos a largo plazo, lo que implica una exposición mayor a los riesgos de liquidez y solvencia. Además, el hecho de que los bancos estén otorgando una mayor proporción de préstamos al sector privado no financiero implica que están expuestos a los riesgos asociados con la solvencia de estos agentes económicos.
+
+En términos generales, la transformación de madurez que realizan los bancos implica un equilibrio delicado entre la oferta y la demanda de financiamiento y la estabilidad del sistema financiero. Si los bancos no pueden cumplir con sus compromisos de pago, ya sea porque no pueden obtener financiamiento a corto plazo o porque no pueden recuperar los préstamos a largo plazo, puede generarse una crisis financiera que afecte negativamente a la economía en su conjunto. Por lo tanto, es fundamental que los reguladores financieros monitoreen de cerca las actividades bancarias y adopten medidas preventivas y correctivas para asegurar la estabilidad del sistema financiero.
+
+
+
+**(e) A propósito, documente el incremento dramático a lo largo del tiempo en el crédito hipotecario como proporción del PIB.**
+
+A continuación se muestra la evolución del crédito hipotecario en relación al PIB.
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+b5<- read.csv("~/GitHub/Tarea-4-Equipo-3/hipoteca-pib.csv")
+b5$Fecha= as.Date(b5$Fecha,format="%d/%m/%Y")
+#Tratamos las variables como series de tiempo
+pib<- ts(b5$PIB, frequency=4, start=c(2009,1))
+viv<- ts(b5$Vivienda,frequency=4, start=c(2009,1))
+
+df5<- data.frame(pib, viv)
+periodos <- seq(as.Date("2009-01-01"), length.out = nrow(df5), by = "3 months")
+df5<- data.frame(periodos,pib,viv)
+
+ggplot(df5, aes(x = periodos)) +
+  geom_line(aes(y= pib, color="PIB")) +
+  geom_line(aes(y= viv, color="Crédito hipotecario")) +
+  labs(x = "Periodo", y = "Saldo en millones de pesos mxn", color = "Títulos de deuda")
+
+```
+
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+#como porcentaje del PIB
+df5$p_viv<- df5$viv/df5$pib
+ggplot(df5, aes(x= periodos, y=p_viv))+
+  geom_line(color="maroon")+
+  labs(x = "Periodo", y = "Porcentaje")
+```
+
+En la figura se muestra un aumento significativo del crédito hipotecario como porcentaje del PIB a lo largo del tiempo. Desde el comienzo de la serie en los años 2000, la proporción del crédito hipotecario en relación al PIB ha tenido una tendencia ascendente. Este hecho sugiere que durante el periodo de tiempo analizado, la tasa a la que se otorgan créditos hipotecarios ha sido mayor que la tasa de crecimiento de la economía. En otras palabras, la economía no ha crecido al mismo ritmo que el otorgamiento de créditos hipotecarios, lo que podría indicar un aumento en el riesgo de incumplimiento en el futuro. Es importante tener en cuenta este aumento en la proporción de crédito hipotecario en relación al PIB al momento de evaluar la estabilidad del sistema financiero y su capacidad para enfrentar posibles riesgos y crisis.

@@ -1,6 +1,6 @@
 ---
 title: "Equipo 3"
-subtitle: "Tarea 4: Inversión"
+subtitle: "Tarea 4: Mercados financieros"
 author: 
   - Maria Isabel Cabrales Soria 
   - Jesus Enrique Corona Zetina 
@@ -41,7 +41,11 @@ options(knitr.duplicate.label = "allow")
 
 \newpage
 
+# Ejercicio 3
+```{r child = 'Tarea 4.Rmd'}
+```
 
+\newpage
 
 # Ejercicio 4
 

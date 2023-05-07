@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2023.5.1)  7 MAY 2023 04:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2023.5.1)  7 MAY 2023 11:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -703,104 +703,192 @@ LaTeX Info: Redefining \% on input line 349.
 LaTeX Info: Redefining \. on input line 370.
 LaTeX Info: Redefining \% on input line 370.
 [7]
-<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-6-1.pdf, id=66, 469.755pt x 
-325.215pt>
-File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (t
-ype pdf)
-<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-6-1.pdf>
-Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-6-1.
-pdf  used on input line 384.
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-14-1.pdf, id=68, 469.755pt x
+ 325.215pt>
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (
+type pdf)
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-14-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-14-1
+.pdf  used on input line 435.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+LaTeX Info: Redefining \. on input line 437.
+LaTeX Info: Redefining \% on input line 437.
+[8]
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-16-1.pdf, id=74, 469.755pt x
+ 325.215pt>
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (
+type pdf)
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-16-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-16-1
+.pdf  used on input line 466.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+LaTeX Info: Redefining \. on input line 468.
+LaTeX Info: Redefining \% on input line 468.
+[9 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-14-1.pdf>]
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-18-1.pdf, id=84, 469.755pt x
+ 325.215pt>
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (
+type pdf)
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-18-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-18-1
+.pdf  used on input line 489.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+LaTeX Info: Redefining \. on input line 491.
+LaTeX Info: Redefining \% on input line 491.
+[10 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-16-1.pdf>]
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-23-1.pdf, id=95, 469.755pt x
+ 325.215pt>
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (
+type pdf)
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-23-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-23-1
+.pdf  used on input line 526.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+LaTeX Info: Redefining \. on input line 528.
+LaTeX Info: Redefining \% on input line 528.
+[11 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-18-1.pdf>]
+LaTeX Info: Redefining \. on input line 571.
+LaTeX Info: Redefining \% on input line 571.
+[12 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-23-1.pdf>]
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-25-1.pdf, id=114, 469.755pt 
+x 325.215pt>
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (
+type pdf)
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-25-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-25-1
+.pdf  used on input line 571.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--575
+[][]
+ []
+
+LaTeX Info: Redefining \. on input line 614.
+LaTeX Info: Redefining \% on input line 614.
+[13 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-25-1.pdf>]
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-26-1.pdf, id=126, 469.755pt 
+x 325.215pt>
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (
+type pdf)
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-26-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-26-1
+.pdf  used on input line 671.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+LaTeX Info: Redefining \. on input line 673.
+LaTeX Info: Redefining \% on input line 673.
+[14]
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-27-1.pdf, id=131, 469.755pt 
+x 325.215pt>
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (
+type pdf)
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-27-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-27-1
+.pdf  used on input line 673.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+LaTeX Info: Redefining \. on input line 675.
+LaTeX Info: Redefining \% on input line 675.
+[15 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-26-1.pdf>]
+LaTeX Info: Redefining \. on input line 688.
+LaTeX Info: Redefining \% on input line 688.
+[16 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-27-1.pdf>]
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-28-1.pdf, id=150, 469.755pt 
+x 325.215pt>
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (
+type pdf)
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-28-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-28-1
+.pdf  used on input line 702.
 (pdftex.def)             Requested size: 444.7523pt x 307.90543pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 379--390
+Underfull \hbox (badness 10000) in paragraph at lines 697--708
 []
  []
 
-<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-7-1.pdf, id=67, 469.755pt x 
-325.215pt>
-File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (t
-ype pdf)
-<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-7-1.pdf>
-Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-7-1.
-pdf  used on input line 400.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--405
-[][]
- []
-
-LaTeX Info: Redefining \. on input line 405.
-LaTeX Info: Redefining \% on input line 405.
-[8 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-6-1.pdf>]
-<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-8-1.pdf, id=80, 469.755pt x 
-325.215pt>
-File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (t
-ype pdf)
-<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-8-1.
-pdf  used on input line 413.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-LaTeX Info: Redefining \. on input line 415.
-LaTeX Info: Redefining \% on input line 415.
-[9 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-7-1.pdf>]
-<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-9-1.pdf, id=91, 469.755pt x 
-325.215pt>
-File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (t
-ype pdf)
-<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-9-1.
-pdf  used on input line 425.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-LaTeX Info: Redefining \. on input line 440.
-LaTeX Info: Redefining \% on input line 440.
-[10 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-8-1.pdf>]
-LaTeX Info: Redefining \. on input line 472.
-LaTeX Info: Redefining \% on input line 472.
-[11 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-9-1.pdf>]
-<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-10-1.pdf, id=114, 469.755pt 
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-29-1.pdf, id=151, 469.755pt 
 x 325.215pt>
-File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (
 type pdf)
-<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-10-1.pdf>
-Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-10-1
-.pdf  used on input line 474.
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-29-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-29-1
+.pdf  used on input line 718.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 474--481
+Underfull \hbox (badness 10000) in paragraph at lines 718--723
 [][]
  []
 
-<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-11-1.pdf, id=115, 469.755pt 
+LaTeX Info: Redefining \. on input line 723.
+LaTeX Info: Redefining \% on input line 723.
+[17 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-28-1.pdf>]
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-30-1.pdf, id=164, 469.755pt 
 x 325.215pt>
-File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (
 type pdf)
-<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-11-1.pdf>
-Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-11-1
-.pdf  used on input line 482.
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-30-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-30-1
+.pdf  used on input line 731.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+LaTeX Info: Redefining \. on input line 733.
+LaTeX Info: Redefining \% on input line 733.
+[18 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-29-1.pdf>]
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-31-1.pdf, id=175, 469.755pt 
+x 325.215pt>
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (
+type pdf)
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-31-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-31-1
+.pdf  used on input line 743.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+LaTeX Info: Redefining \. on input line 758.
+LaTeX Info: Redefining \% on input line 758.
+[19 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-30-1.pdf>]
+LaTeX Info: Redefining \. on input line 790.
+LaTeX Info: Redefining \% on input line 790.
+[20 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-31-1.pdf>]
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-32-1.pdf, id=199, 469.755pt 
+x 325.215pt>
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-32-1.pdf Graphic file (
+type pdf)
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-32-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-32-1
+.pdf  used on input line 792.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 482--487
+Underfull \hbox (badness 10000) in paragraph at lines 792--799
 [][]
  []
 
-LaTeX Info: Redefining \. on input line 487.
-LaTeX Info: Redefining \% on input line 487.
-[12 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-10-1.pdf>]
-LaTeX Info: Redefining \. on input line 519.
-LaTeX Info: Redefining \% on input line 519.
-[13 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-11-1.pdf>]
-LaTeX Info: Redefining \. on input line 549.
-LaTeX Info: Redefining \% on input line 549.
-[14] (Tarea-4-Equipo-3.aux
+<Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-33-1.pdf, id=200, 469.755pt 
+x 325.215pt>
+File: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (
+type pdf)
+<use Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-33-1.pdf>
+Package pdftex.def Info: Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-33-1
+.pdf  used on input line 800.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 800--805
+[][]
+ []
+
+LaTeX Info: Redefining \. on input line 805.
+LaTeX Info: Redefining \% on input line 805.
+[21 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-32-1.pdf>]
+LaTeX Info: Redefining \. on input line 837.
+LaTeX Info: Redefining \% on input line 837.
+[22 <./Tarea-4-Equipo-3_files/figure-latex/unnamed-chunk-33-1.pdf>]
+LaTeX Info: Redefining \. on input line 867.
+LaTeX Info: Redefining \% on input line 867.
+[23] (Tarea-4-Equipo-3.aux
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
 ) ) 
 Here is how much of TeX's memory you used:
- 16217 strings out of 478659
- 263365 string characters out of 2845921
- 638963 words of memory out of 3000000
- 33874 multiletter control sequences out of 15000+600000
- 461238 words of font info for 139 fonts, out of 8000000 for 9000
+ 16309 strings out of 478659
+ 266792 string characters out of 2845921
+ 639008 words of memory out of 3000000
+ 33918 multiletter control sequences out of 15000+600000
+ 462516 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,12n,77p,1015b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/lynev/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{
@@ -820,9 +908,9 @@ s/lynev/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users
 ynev/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C:/Users/l
 ynev/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/l
 ynev/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb>
-Output written on Tarea-4-Equipo-3.pdf (14 pages, 323898 bytes).
+Output written on Tarea-4-Equipo-3.pdf (23 pages, 400951 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 34 named destinations out of 1000 (max. 500000)
- 32847 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
+ 32890 words of extra memory for PDF output out of 35830 (max. 10000000)
 
