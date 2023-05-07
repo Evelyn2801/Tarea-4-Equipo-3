@@ -1,0 +1,17 @@
+--- 
+output:
+  pdf_document:
+    keep_tex: yes
+  html_document: default
+link-citations: yes
+documentclass: book
+description: Este es un ejemplo mínimo de métodos numéricos usando R, knitr y latex
+---
+
+
+# Problema 2
+
+Estudie la historia del IPAB (antes Fobaproa) y describa en un parrafo qué es, por qué existe, con que se compara en EEUU.
+
+
+Derivado de la crisis financiera mexicana de las decadas de 1980 y 1990 se crea un organismo cuyo proposito era proporcionar un mecanismo para garantizar la estabilidad del sistema bancario y proteger a los depositantes de los bancos que enfrentaban problemas financieros cuyo nombre era FOBAPROA que en el año 1999 es sustituida por el Instituto para la Proteccion al Ahorro Bancario ,IPAB. El objetivo del IPAB es proteger los depositos bancarios de los ahorradores en caso de que un banco se declare en bancarota además se encarga de supervisar y regular a las instituciones financieras del país. En Estados Unidos hay un organismo que también se encarga de proteger a los ahorradores estadounidenses y también surgió en respuesta a una crisis, la Federal Deposit Insurance Corp, FDIC.

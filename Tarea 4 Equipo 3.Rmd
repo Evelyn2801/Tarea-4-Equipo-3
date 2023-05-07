@@ -51,7 +51,7 @@ options(knitr.duplicate.label = "allow")
 
 # Ejercicio 4
 
-```{r child = 'Ejercicio 4.Rmd'}
+```{r child = 'Tarea 4 - Problema 4.Rmd'}
 ```
 
 # Ejercicio 5
