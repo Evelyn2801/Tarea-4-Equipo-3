@@ -1,0 +1,123 @@
+---
+title: "Tarea 4 Problema 4"
+author: "Mario Lechuga"
+date: "2023-05-06"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r data, include = FALSE, message = FALSE, warning = FALSE}
+library(readxl)
+library(mFilter)
+library(knitr)
+Base <- read_excel("C:/Users/PROBOOK/Desktop/COLMEX/Segundo Semestre/Macroeconomía/Tarea 4/Base.xlsx", col_types = c("date", "numeric", "numeric", "numeric", "numeric", "numeric", 
+                                        "numeric", "numeric", "numeric","numeric", "numeric", "numeric", 
+                                       "numeric", "numeric", "numeric","numeric", "numeric", "numeric", 
+                                       "numeric", "numeric", "numeric","numeric", "numeric"))
+```
+
+(a) Utilice datos del SIE/Valores en Circulación y de SIE/Finanzas públicas del Banco de México para describir la evolución a lo largo del tiempo de la composición de la deuda del gobierno mexicano por tipo de instrumento, madurez y moneda. Señale la implicación de lo que encuentre para el riesgo de impago.
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+# Convert to time series
+ts_Base <- ts(Base[,2:ncol(Base)], start = c(2009,6), frequency = 12)
+
+#VARIABLES
+GPGF  <-ts_Base[,1]
+IngGF  <-ts_Base[,2]
+DeudaIFP <- ts_Base[,3]
+DeudaIFPCP <- ts_Base[,4]
+DeudaIFPLP <- ts_Base[,5]
+DeudaIFPML <- ts_Base[,6]
+DeudaIFPME <- ts_Base[,7]
+DeudaGF<- ts_Base[,8]
+DeudaGFCP<- ts_Base[,9]
+DeudaGFLP<- ts_Base[,10]
+DeudaGFML<- ts_Base[,11]
+DeudaGFME<- ts_Base[,12]
+Udibonos <- ts_Base[,13]
+BONDESF <- ts_Base[,17]
+BONDESG <- ts_Base[,18]
+CETES <- ts_Base[,19]
+BONDES <- ts_Base[,20]
+BONDESD <- ts_Base[,21]
+BONOS <- ts_Base[,22]
+
+#Analizar las finanzas publicas del gobierno federal
+Balance<-IngGF-GPGF
+# Plot the first time series
+plot.ts(Balance, ylim = c(-1000000, 10000000),main="Finanzas Públicas Gobierno Federal")
+# Add the other time series to the same plot
+lines(GPGF, col = "red")
+lines(IngGF, col = "blue")
+legend("topleft", legend = c("Balance", "Gasto Federal", "Ingreso Federal"),
+       col = c("black", "red", "blue"), lty = 1)
+```
+El comienzo de nuestro análisis se basa en observar la evolución del gasto programable y el ingreso del gobierno federal, así como del balance primario. Como se observa en la gráfica, el balance primario tiende a ser cero o negativo, exceptuando los últimos 4 años en los que en algunas ocasiones ha tocado terreno positivo. 
+
+Si el balance primario tiende a ser cero o negativo, significa que el gobierno federal está gastando más de lo que está ingresando. En otras palabras, el gobierno está financiando su gasto a través de deuda.Además, si el gasto del gobierno sigue creciendo y el balance primario sigue siendo negativo, es posible que el gobierno tenga que seguir emitiendo deuda para financiar sus operaciones, lo que aumentaría aún más el riesgo de impago.
+
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+plot.ts(DeudaGF, ylim = c(-100, 10000000),main="Deuda Gobierno Federal por madurez ")
+lines(DeudaGFCP, col = "orange")
+lines(DeudaGFLP, col = "brown")    
+legend("topleft", legend = c("DeudaGF", "DeudaCortoplazo", "DeudaLargoPLazo"),
+       col = c("black", "orange", "brown"), lty = 1) 
+```
+En el análisis de la madurez de la deuda, podemos observar que la deuda de corto plazo representó el 23% de la deuda total durante el periodo. Esto implica un riesgo de impago del gobierno, especialmente si esa deuda de corto plazo no se renueva o se paga en su vencimiento.
+
+A pesar de que la deuda de largo plazo representa, en promedio, el 77% de la deuda total, el gobierno debería considerar reducir su dependencia de la deuda de corto plazo y aumentar la proporción de deuda a largo plazo, la cual a menudo tiene tasas de interés fijas y plazos más largos. Esto ayudaría a reducir el riesgo de impago y aumentar la estabilidad financiera del gobierno a largo plazo.
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+plot.ts(DeudaGFML, ylim = c(-100, 10000000),main="Deuda Gobierno Federal por moneda ")
+lines(DeudaGFME, col = "green")    
+legend("topleft", legend = c("MonedaLocal", "MonedaExtranjera"),
+       col = c("black", "green"), lty = 1) 
+```
+
+Como se puede observar gráficamente, la mayoría de su deuda se encuentra en moneda nacional, lo cual puede ser beneficioso para reducir el riesgo de impago. Si la deuda estuviera denominada en una moneda extranjera, cualquier fluctuación en el tipo de cambio podría aumentar el costo de la deuda y, en última instancia, aumentar el riesgo de impago. Además, el gobierno tendría que estar más precavido al momento de usar sus reservas internacionales. Al estar denominada en moneda nacional, el gobierno tiene un mayor control sobre el costo de su deuda y puede implementar políticas para reducir el riesgo de impago.
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+ts.plot(ts_Base[,c(13,17:22)],ylim= c(-1000999, 3999999),  col = c("red", "blue", "green", "orange", "purple", "brown", "black"),main="Instrumentos de deuda del Gobierno Federal ")
+variable_names <- c("Udibonos", "BONDESF", "BONDESG", "CETES", "BONDES", "BONDESD", "BONOS")
+colors <- c("red", "blue", "green", "orange", "purple", "brown", "black")
+variable_colors <- data.frame(variable = variable_names, color = colors)
+kable(variable_colors, row.names = FALSE)
+```
+Por último, la deuda del gobierno mexicano está compuesta principalmente por instrumentos financieros como los Bonos de Desarrollo del Gobierno Federal con Tasa de Interés Fija (bonos) y los Bonos de Desarrollo del Gobierno Federal (bondes) a tasa flotante.
+
+El hecho de que los bonos y bondes sean los instrumentos financieros que representan la mayor parte de la deuda del gobierno mexicano sugiere que el gobierno ha estado recurriendo a estos títulos de deuda para financiar su gasto público. Sin embargo, es importante tener en cuenta que la composición de la deuda del gobierno puede tener implicaciones significativas para el riesgo de impago. Por ejemplo, si el gobierno depende en gran medida de un solo tipo de instrumento financiero para financiar su deuda, esto puede aumentar su vulnerabilidad a los riesgos asociados con ese instrumento en particular.
+
+En conclusión, recomendamos al gobierno reducir su dependencia de la deuda emitida para financiar su gasto presupuestal durante el año. No obstante, en el corto plazo, no vemos un riesgo de impago significativo debido a los instrumentos utilizados y al hecho de que más del 70% de su deuda es a largo plazo.
+
+
+(b) Utilice datos del SIE/Valores en Circulación o para describir la composición a lo largo del tiempo de la deuda del del sector privado no financiero mexicano por madurez y moneda. Señale la implicación de lo que encuentre para el riesgo de impago.
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+plot.ts(DeudaIFP, ylim = c(0, 1000009),main="Deuda del sector privado no financiero mexicano por madurez")
+lines(DeudaIFPCP, col = "red")
+lines(DeudaIFPLP, col = "blue")
+legend("topleft", legend = c("Deuda total", "Corto Plazo", "Largo Plazo"),
+       col = c("black", "red", "blue"), lty = 1)
+```
+Podemos observar que la deuda de corto plazo, en promedio, representa un 11% de la deuda total, siendo menor en comparación al caso gubernamental, lo que la hace menos vulnerable a los riesgos asociados con la deuda de corto plazo. Esto genera un menor riesgo de impago, ya que es más probable que los ingresos de estas entidades puedan cubrir con mayor facilidad este tipo de deuda.
+
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+plot.ts(DeudaIFP, ylim = c(0, 1000009),main="Deuda del sector privado no financiero mexicano por moneda")
+lines(DeudaIFPML, col = "orange")
+lines(DeudaIFPME, col = "purple")
+legend("topleft", legend = c("Deuda total", "Moneda Local", "Moneda Extranjera"),
+       col = c("black", "orange", "purple"), lty = 1)
+```
+Además, como se puede observar, la mayor parte de su deuda está denominada en la divisa nacional, lo que a su vez reduce aún más el riesgo de impago para estas entidades, ya que no tienen que obtener divisa extranjera ni su deuda se modifica a través del tipo de cambio.
+
+Como conclusión, el sector privado no financiero mexicano tiene un menor riesgo de impago debido a la composición de su deuda.
+
+
+(c) Describa la evolución de las cifras anteriores durante la pandemia de Covid-19, es decir entre principios de 2020 y hasta la fecha.
+
+Por el lado del gobierno mexicano, durante la pandemia de COVID-19 se puede observar un aumento en la dependencia de la deuda de corto plazo a finales de 2021. Sin embargo, para comienzos del 2022 se volvió a la tendencia original. Esto pudo haber sido causado por la falta de ingresos derivada de la reducción de la actividad económica durante la pandemia, lo que incrementó el riesgo de impago del gobierno en esos años. El beneficio es que se mantuvo la proporción de deuda en moneda nacional, por lo que no aumentó la probabilidad de impago por ese factor. Sin embargo, el gobierno aún debe trabajar para equilibrar sus ingresos y gastos y reducir su dependencia de la deuda para asegurarse de mantener la sostenibilidad de su deuda tanto a corto como a largo plazo.
+
+Por otro lado, las tendencias del sector privado no financiero mexicano no se modificaron, por lo que su riesgo de impago se mantuvo constante durante todo el análisis. Sin embargo, se necesita un análisis más detallado acerca de los ingresos de este sector para verificar su riesgo de impago de manera más precisa.
